@@ -1,10 +1,10 @@
 
-using NUnit.Framework;
+
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
 using SeleniumwithDotNetCore.PageObject;
-using SeleniumwithDotNetCore;
-using System.Collections.Generic;
+
 
 namespace SeleniumwithDotNetCore.TestCases
 {
@@ -26,15 +26,31 @@ namespace SeleniumwithDotNetCore.TestCases
         [Test]
         public void NavigateToGooglePage()
         {
-            _testpo.NavigatetoURL(URL);
-            IList<IWebElement> it=_driver.FindElements(By.Id("google"));
+            try
+            {
+                _testpo.NavigatetoURL(URL);
+                IList<IWebElement> it = _driver.FindElements(By.Id("google"));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Assert.Fail("Exception : :"+e+": : Retry :"+GetType().Name+ ": :"+TestContext.CurrentContext.Test.Name);
+            }
         }
         [Test]
         public void NavigateToGoogleTolocateID()
         {
-            _testpo.NavigatetoURL(URL);
-            _driver.FindElement(By.Id("Seach"));
-
+            try
+            {
+                _testpo.NavigatetoURL(URL);
+                _driver.FindElement(By.Id("Seach"));
+            }
+            catch (Exception e)
+            {
+                
+                Console.WriteLine(e.Message);
+                Assert.Fail("Exception : :" + e + ": : Retry :" + GetType().Name + ": :" + TestContext.CurrentContext.Test.Name);
+            }
         }
         [Test]
         public void NavigateToGooglePageAndSearch()

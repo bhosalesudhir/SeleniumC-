@@ -50,11 +50,7 @@ namespace SeleniumwithDotNetCore.TestCases
                         DateTime time = DateTime.Now;
                         String fileName = TestContext.CurrentContext.Test.MethodName+"_"+ DateTime.Now.ToString("dd-MM-yyyy");
                         String screenShotPath = BaseClass.Capture(driver,fileName);
-                        //test.Log(Status.Fail, "Fail");
-                        test.Log(Status.Error, GetType().Name +": :"+TestContext.CurrentContext.Test.Name+": :"+TestContext.CurrentContext.Result.Message);
-                        test.AddScreenCaptureFromPath(screenShotPath,fileName);
-                        //test.Info("Details",MediaEntityBuilder.CreateScreenCaptureFromPath(screenShotPath+"\\"+fileName+".png").Build());
-
+                        test.Log(Status.Error, GetType().Name +": :"+TestContext.CurrentContext.Test.Name+": :"+TestContext.CurrentContext.Result.Message);                     
                         break;
                     default:
 
@@ -69,8 +65,7 @@ namespace SeleniumwithDotNetCore.TestCases
                 Console.WriteLine(e.StackTrace);
             }
             finally{
-                driver.Close();
-                
+                //driver.Close();
                 driver.Quit();
             }
 

@@ -20,9 +20,9 @@ using AventStack.ExtentReports.Reporter;
             ClearDirectory(Directory.GetParent(dir).Parent.ToString()+ screenshot, "*.png");
             ClearDirectory(dir + report , "*.html");
             extent = new ExtentReports();
-            DirectoryInfo di = Directory.CreateDirectory(dir + TestContext.CurrentContext.Test.ClassName);
+            DirectoryInfo di = Directory.CreateDirectory(dir +report+ TestContext.CurrentContext.Test.ClassName);
 
-            var htmlReporter = new ExtentHtmlReporter(dir+ TestContext.CurrentContext.Test.ClassName +".html");
+            var htmlReporter = new ExtentHtmlReporter(dir+ report+TestContext.CurrentContext.Test.ClassName +".html");
 
             extent.AddSystemInfo("Environment", "Journey of Quality");
 

@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <Folder Include="CommanUtils\" />
+    <Folder Include="Screenshots\" />
   </ItemGroup>
 
 </Project>
