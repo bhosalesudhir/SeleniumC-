@@ -4,11 +4,12 @@ using OpenQA.Selenium.Chrome;
 
 using NUnit.Framework.Interfaces;
 using NUnit.Framework;
+using SeleniumwithDotNetCore.CommanUtils;
 
 namespace SeleniumwithDotNetCore.TestCases
 {
-    [TestFixture]
-    public class BaseClass 
+  
+    public class BaseClass : CommanUtillity
     {
         public IWebDriver driver;
         public ExtentTest test;

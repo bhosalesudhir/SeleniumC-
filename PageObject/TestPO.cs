@@ -1,10 +1,10 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
-
+using SeleniumwithDotNetCore.CommanUtils;
 
 namespace SeleniumwithDotNetCore.PageObject
 {
-    public class TestPO 
+    public class TestPO :CommanUtillity
     {
         IWebDriver driver;
 

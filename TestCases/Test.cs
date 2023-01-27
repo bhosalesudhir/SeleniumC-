@@ -34,7 +34,7 @@ namespace SeleniumwithDotNetCore.TestCases
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                Assert.Fail("Exception : :"+e+": : Retry :"+GetType().Name+ ": :"+TestContext.CurrentContext.Test.Name);
+                Assert.Fail("Exception : :" + e + ": : Retry :" + GetType().Name + ": :" + TestContext.CurrentContext.Test.Name);
             }
         }
         [Test]
@@ -47,7 +47,7 @@ namespace SeleniumwithDotNetCore.TestCases
             }
             catch (Exception e)
             {
-                
+
                 Console.WriteLine(e.Message);
                 Assert.Fail("Exception : :" + e + ": : Retry :" + GetType().Name + ": :" + TestContext.CurrentContext.Test.Name);
             }
@@ -55,27 +55,66 @@ namespace SeleniumwithDotNetCore.TestCases
         [Test]
         public void NavigateToGooglePageAndSearch()
         {
-            _testpo.NavigatetoURL(URL)
+
+            try
+            {
+                _testpo.NavigatetoURL(URL)
                    .SearchText("Java");
-           
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+                Assert.Fail("Exception : :" + e + ": : Retry :" + GetType().Name + ": :" + TestContext.CurrentContext.Test.Name);
+            }
         }
         [Test]
         public void NavigateToGooglePage4()
         {
-            _testpo.NavigatetoURL(URL);
-            _driver.FindElement(By.Id("google"));
+
+            try
+            {
+                _testpo.NavigatetoURL(URL);
+                _driver.FindElement(By.Id("google"));
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+                Assert.Fail("Exception : :" + e + ": : Retry :" + GetType().Name + ": :" + TestContext.CurrentContext.Test.Name);
+            }
         }
         [Test]
         public void NavigateToGoogleTolocateID5()
         {
-            _testpo.NavigatetoURL(URL);
-            _driver.FindElement(By.Id("Seach"));
+
+            try
+            {
+                _testpo.NavigatetoURL(URL);
+                _driver.FindElement(By.Id("Seach"));
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+                Assert.Fail("Exception : :" + e + ": : Retry :" + GetType().Name + ": :" + TestContext.CurrentContext.Test.Name);
+            }
         }
         [Test]
         public void NavigateToGooglePageAndSearch6()
         {
-            _testpo.NavigatetoURL(URL)
-                   .SearchText("Java");
+
+            try
+            {
+                _testpo.NavigatetoURL(URL)
+                 .SearchText("Java");
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+                Assert.Fail("Exception : :" + e + ": : Retry :" + GetType().Name + ": :" + TestContext.CurrentContext.Test.Name);
+            }
         }
         [TearDown]
         public void Teardown()
@@ -83,6 +122,6 @@ namespace SeleniumwithDotNetCore.TestCases
             AfterTest();
         }
 
-            
+
     }
 }
