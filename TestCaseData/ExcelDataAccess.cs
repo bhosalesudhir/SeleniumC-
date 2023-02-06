@@ -25,12 +25,12 @@ namespace SeleniumwithDotNetCore.TestCaseData
             return conn;
         }
 
-        public static string GetTestData(string keyName)
+        public static string GetTestData()
         {
             using (var connection = new OleDbConnection(TestDataFileConnection()))
             {
                 connection.Open(); // dataset is sheetname of excel file , key name = testcasename
-                var query = string.Format("select * from [DataSet$] where key='{0}'", keyName);
+                var query = string.Format("select * from [DataSet$]");
                 var value = connection.Query<string>(query).FirstOrDefault();
                 connection.Close();
                 return value;
